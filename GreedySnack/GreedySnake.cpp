@@ -1,11 +1,11 @@
-#include "GreedySnack.h"
+#include "GreedySnake.h"
 #include<QPixmap>
 #include<QBrush>
 #include<QPainter>
 #include<QOpenGLWidget>
 #include "GameController.h"
 
-GreedySnack::GreedySnack(QWidget *parent)
+GreedySnake::GreedySnake(QWidget *parent)
 	: QMainWindow(parent),\
 	theScene(new QGraphicsScene{this}),\
 	theView(new QGraphicsView{theScene,this})
@@ -15,13 +15,13 @@ GreedySnack::GreedySnack(QWidget *parent)
 	this->init();
 }
 
-void GreedySnack::init()
+void GreedySnake::init()
 {
 	this->initGraph();//初始化view,scene
 	game = new GameController{ theScene,this };//必须先初始化scene才能初始化
 }
 
-void GreedySnack::initGraph()
+void GreedySnake::initGraph()
 {
 	theView->setViewport(new QOpenGLWidget);//使用openGL绘制
 	//背景网格

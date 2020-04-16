@@ -33,21 +33,21 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GreedySnack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Food.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GameController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GreedySnake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="GreedySnack.h">
+    <QtMoc Include="GameController.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <QtMoc Include="GameController.h">
+    <QtMoc Include="GreedySnake.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

@@ -5,14 +5,13 @@
 #include<QGraphicsView>
 
 class GameController;
-namespace Ui { class GreedySnackClass; }
 
-class GreedySnack : public QMainWindow
+class GreedySnake : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-	GreedySnack(QWidget *parent = Q_NULLPTR);
+	GreedySnake(QWidget *parent = Q_NULLPTR);
 
 private:
 	void init();
