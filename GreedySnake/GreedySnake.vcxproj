@@ -128,10 +128,10 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="GreedySnack.qrc" />
+    <QtRcc Include="GreedySnake.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="GreedySnack.rc" />
+    <ResourceCompile Include="GreedySnake.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Food.h">

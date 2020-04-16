@@ -52,16 +52,16 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="GreedySnack.qrc">
+    <ClInclude Include="Food.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="GreedySnake.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="GreedySnack.rc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Food.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ResourceCompile Include="GreedySnake.rc" />
   </ItemGroup>
 </Project>
