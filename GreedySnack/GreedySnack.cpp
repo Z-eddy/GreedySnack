@@ -2,6 +2,7 @@
 #include<QPixmap>
 #include<QBrush>
 #include<QPainter>
+#include<QOpenGLWidget>
 #include "GameController.h"
 
 GreedySnack::GreedySnack(QWidget *parent)
@@ -22,6 +23,7 @@ void GreedySnack::init()
 
 void GreedySnack::initGraph()
 {
+	theView->setViewport(new QOpenGLWidget);//使用openGL绘制
 	//背景网格
 	const int w{ 20 }, h{ 20 };
 	QPixmap pixmap(w, h);
