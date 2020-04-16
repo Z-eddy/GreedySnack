@@ -2,7 +2,10 @@
 
 #include <QtWidgets/QMainWindow>
 #include<QGraphicsScene>
-#include "ui_GreedySnack.h"
+#include<QGraphicsView>
+
+class GameController;
+namespace Ui { class GreedySnackClass; }
 
 class GreedySnack : public QMainWindow
 {
@@ -15,6 +18,7 @@ private:
 	void init();
 		void initGraph();
 
-	Ui::GreedySnackClass ui;
 	QGraphicsScene *theScene;
+	QGraphicsView *theView;
+	GameController *game;
 };

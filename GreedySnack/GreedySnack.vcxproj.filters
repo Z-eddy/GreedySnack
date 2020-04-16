@@ -36,16 +36,20 @@
     <ClCompile Include="GreedySnack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Food.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="GreedySnack.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="GreedySnack.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
+    <QtMoc Include="GameController.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="GreedySnack.qrc">
@@ -54,5 +58,10 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GreedySnack.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Food.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
