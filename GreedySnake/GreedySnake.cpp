@@ -30,6 +30,8 @@ void GreedySnake::init()
 void GreedySnake::initGraph()
 {
 	theView->setViewport(new QOpenGLWidget);//使用openGL绘制
+	theScene->setBackgroundBrush(Qt::gray);
+	/*
 	//背景网格
 	const int w{ GRIDW }, h{ GRIDH };
 	QPixmap pixmap(w, h);
@@ -38,4 +40,5 @@ void GreedySnake::initGraph()
 	painter.drawRect(0, 0, w, h);
 	//theScene->setBackgroundBrush(QBrush{ pixmap });
 	theView->setBackgroundBrush(QBrush{ pixmap });//设置的是view的scene
+	*/
 }

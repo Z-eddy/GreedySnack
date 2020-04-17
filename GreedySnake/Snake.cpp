@@ -1,8 +1,13 @@
 #include "Snake.h"
+#include<iostream>
 #include<QPainter>
 #include<QPainterPath>
 #include<QList>
+#include"GameController.h"
 #include"Information.h"
+using std::cout;
+using std::endl;
+using std::ends;
 
 static const qreal BODYSIZE{ Information::value({"SnakeSize","bodySize"}).toDouble() };
 static const int WIDGETW{ Information::value({"MainWindowSize","width"}).toInt() };
@@ -10,8 +15,8 @@ static const int WIDGETH{ Information::value({"MainWindowSize","height"}).toInt(
 static const int ITEMTYPE{ Information::value({"Type","ItemType"}).toInt() };
 static const int FOODTYPE{ Information::value({"Type","FoodType"}).toInt() };
 
-Snake::Snake(QGraphicsItem *parent)
-	: QGraphicsItem(parent), growing(0), speed(10),\
+Snake::Snake(GameController *controller,QGraphicsItem *parent)
+	: QGraphicsItem(parent),theController(controller), growing(2), speed(2),\
 	tickCounter(0),dirction(MoveDirection::NoMove)
 {
 }
@@ -99,6 +104,26 @@ void Snake::advance(int phase)
 	handleCollisions();
 }
 
+void Snake::setLeftDir()
+{
+	dirction = MoveDirection::Left;
+}
+
+void Snake::setRightDir()
+{
+	dirction = MoveDirection::Right;
+}
+
+void Snake::setUpDir()
+{
+	dirction = MoveDirection::Up;
+}
+
+void Snake::setDownDir()
+{
+	dirction = MoveDirection::Down;
+}
+
 void Snake::moveLeft()
 {
 	head.rx() -= BODYSIZE;
@@ -136,11 +161,11 @@ void Snake::handleCollisions()
 	auto items{ this->collidingItems() };
 	for (const auto&item : items) {
 		if (item->data(ITEMTYPE) == FOODTYPE) {//Åö×²µ½food
-			emit eatFood(item);
+			theController->eatFood(item);
 			growing += 1;
 		}
 	}
 	if (tail.contains(head)) {
-		emit eatItself();
+		theController->eatItself();
 	}
 }

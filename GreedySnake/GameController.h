@@ -5,6 +5,7 @@
 #include<QGraphicsScene>
 #include <QGraphicsItem>
 #include<QTimer>
+#include<QKeyEvent>
 
 class Snake;
 
@@ -19,10 +20,15 @@ public:
 	void pause();
 	void resume();
 
+	void eatFood(QGraphicsItem*food);
+	void eatItself();
+	virtual bool eventFilter(QObject *watched, QEvent *event) override;
+
 private:
 	void init();
 	QPointF randomCoordinate();
 	void newFood();
+	void handleKeyPress(QKeyEvent *event);
 
 	QTimer timer;
 	QGraphicsScene *theScene;
@@ -31,8 +37,6 @@ private:
 	std::default_random_engine e;
 	std::uniform_real_distribution<double>dw;
 	std::uniform_real_distribution<double>dh;
-
 private slots:
-	void on_eatFood(QGraphicsItem*food);
-	void on_eatItself();
+	void gameOver();
 };
