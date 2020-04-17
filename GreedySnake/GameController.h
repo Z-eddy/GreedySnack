@@ -4,6 +4,8 @@
 #include<QGraphicsScene>
 #include<QTimer>
 
+class Snake;
+
 class GameController : public QObject
 {
 	Q_OBJECT
@@ -20,4 +22,5 @@ private:
 
 	QTimer timer;
 	QGraphicsScene *theScene;
+	Snake *theSnake;
 };

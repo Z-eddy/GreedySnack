@@ -4,6 +4,12 @@
 #include<QPainter>
 #include<QOpenGLWidget>
 #include "GameController.h"
+#include "Information.h"
+
+static const int WIDGETW{ Information::value({"MainWindowSize","width"}).toInt() };
+static const int WIDGETH{ Information::value({"MainWindowSize","height"}).toInt() };
+static const int GRIDW{ Information::value({"GridSize","width"}).toInt() };
+static const int GRIDH{ Information::value({"GridSize","height"}).toInt() };
 
 GreedySnake::GreedySnake(QWidget *parent)
 	: QMainWindow(parent),\
@@ -11,7 +17,7 @@ GreedySnake::GreedySnake(QWidget *parent)
 	theView(new QGraphicsView{theScene,this})
 {
 	this->setCentralWidget(theView);
-	this->resize(800, 600);
+	this->resize(WIDGETW, WIDGETH);
 	this->init();
 }
 
@@ -25,7 +31,7 @@ void GreedySnake::initGraph()
 {
 	theView->setViewport(new QOpenGLWidget);//使用openGL绘制
 	//背景网格
-	const int w{ 20 }, h{ 20 };
+	const int w{ GRIDW }, h{ GRIDH };
 	QPixmap pixmap(w, h);
 	QPainter painter{ &pixmap };
 	painter.setBrush(QBrush{ Qt::gray });

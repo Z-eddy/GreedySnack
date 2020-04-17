@@ -42,6 +42,12 @@
     <ClCompile Include="GreedySnake.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Snake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Information.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="GameController.h">
@@ -55,6 +61,12 @@
     <ClInclude Include="Food.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Snake.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Information.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="GreedySnake.qrc">
@@ -63,5 +75,8 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GreedySnake.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="information.json" />
   </ItemGroup>
 </Project>

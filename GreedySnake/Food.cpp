@@ -2,13 +2,19 @@
 #include<QRectF>
 #include<QPainterPath>
 #include<QPainter>
+#include"Information.h"
 
-static const int w{ 20 }, h{ 20 };
-static const qreal r{ 15.0 };
+static const int WIDGETW{ Information::value({"FoodSize","width"}).toInt() };
+static const int h{ Information::value({"FoodSize","height"}).toInt() };
+static const qreal r{ Information::value({"FoodSize","radius"}).toDouble() };
+static const int ITEMTYPE{ Information::value({"Type","ItemType"}).toInt() };
+static const int FOODTYPE{ Information::value({"Type","FoodType"}).toInt() };
+
 Food::Food(qreal x, qreal y, QGraphicsItem *parent)
 	: QGraphicsItem(parent)
 {
 	this->setPos(x, y);
+	this->setData(ITEMTYPE, FOODTYPE);
 }
 
 Food::~Food()
@@ -17,13 +23,13 @@ Food::~Food()
 
 QRectF Food::boundingRect() const
 {
-	return QRectF(-w, -h, 2 * w, 2 * h);
+	return QRectF(-WIDGETW, -h, 2 * WIDGETW, 2 * h);
 }
 
 QPainterPath Food::shape() const
 {
 	QPainterPath path;
-	path.addEllipse(w / 2, h / 2, r, r);
+	path.addEllipse(WIDGETW / 2, h / 2, r, r);
 	return path;
 }
 

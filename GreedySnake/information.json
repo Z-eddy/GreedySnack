@@ -1,0 +1,22 @@
+{
+  "MainWindowSize": {
+    "width": 800,
+    "height": 600
+  },
+  "GridSize": {
+    "width": 20,
+    "height": 20
+  },
+  "FoodSize": {
+    "width": 20,
+    "height": 20,
+    "radius": 15.0
+  },
+  "SnakeSize": {
+    "bodySize": 20
+  },
+  "Type": {
+    "ItemType": 0,
+    "FoodType": 0
+  }
+}

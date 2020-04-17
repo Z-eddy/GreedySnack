@@ -1,10 +1,9 @@
 #include "GameController.h"
 #include "Food.h"
+#include "Snake.h"
 
 GameController::GameController(QGraphicsScene *scene,QObject *parent)
-	: theScene(scene),\
-	QObject(parent),\
-	timer(this)
+	: theScene(scene), QObject(parent), timer(this), theSnake(new Snake)
 {
 	init();
 }
@@ -29,6 +28,7 @@ void GameController::init()
 
 	Food *f0{ new Food{0,-50} };
 	theScene->addItem(f0);
+	theScene->addItem(theSnake);
 
 	resume();
 }
