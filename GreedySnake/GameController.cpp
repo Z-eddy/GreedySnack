@@ -38,12 +38,11 @@ void GameController::resume()
 
 void GameController::init()
 {
-	timer.start(1000 / 15);
-
-	Food *f0{ new Food{0,-50} };
-	theScene->addItem(f0);
-	theScene->addItem(theSnake);
 	theScene->installEventFilter(this);
+	timer.setInterval(1000 / 15);
+
+	theScene->addItem(theSnake);
+	newFood();
 
 	resume();
 }
