@@ -17,6 +17,6 @@
   },
   "Type": {
     "ItemType": 0,
-    "FoodType": 0
+    "FoodType": 1001
   }
 }

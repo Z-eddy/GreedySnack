@@ -1,4 +1,4 @@
-#include "Snake.h"
+ï»¿#include "Snake.h"
 #include<iostream>
 #include<QPainter>
 #include<QPainterPath>
@@ -48,7 +48,7 @@ QPainterPath Snake::shape() const
 {
 	QPainterPath path;
 	path.setFillRule(Qt::WindingFill);
-	path.addRect(0, 0, BODYSIZE, BODYSIZE);//ÏÈ¼ÓÈëÍ·²¿
+	path.addRect(0, 0, BODYSIZE, BODYSIZE);//å…ˆåŠ å…¥å¤´éƒ¨
 	for (const auto &item : tail) {
 		const auto temp{ this->mapFromScene(item) };
 		path.addRect(temp.x(),temp.y(),BODYSIZE,BODYSIZE);
@@ -67,11 +67,11 @@ void Snake::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWi
 
 void Snake::advance(int phase)
 {
-	if (!phase)return;//advanceµÄµÚÒ»²½²»´¥·¢
+	if (!phase)return;//advanceçš„ç¬¬ä¸€æ­¥ä¸è§¦å‘
 	if (dirction == MoveDirection::NoMove)return;
-	if (++tickCounter%speed != 0)return;//Õû³ýÊ±ÒÆ¶¯
+	if (++tickCounter%speed != 0)return;//æ•´é™¤æ—¶ç§»åŠ¨
 	//body
-	if (growing != 0) {//×ÔÔöÒ»¸ñ
+	if (growing != 0) {//è‡ªå¢žä¸€æ ¼
 		const auto bodyTail{ head };
 		tail.push_back(bodyTail);
 		--growing;
@@ -100,7 +100,7 @@ void Snake::advance(int phase)
 		break;
 	}
 	this->setPos(head);
-	//Åö×²¼ì²â
+	//ç¢°æ’žæ£€æµ‹
 	handleCollisions();
 }
 
@@ -160,7 +160,7 @@ void Snake::handleCollisions()
 {
 	auto items{ this->collidingItems() };
 	for (const auto&item : items) {
-		if (item->data(ITEMTYPE) == FOODTYPE) {//Åö×²µ½food
+		if (item->data(ITEMTYPE) == FOODTYPE) {//ç¢°æ’žåˆ°food
 			theController->eatFood(item);
 			growing += 1;
 		}

@@ -38,7 +38,7 @@ void GameController::resume()
 
 void GameController::init()
 {
-	timer.start(1000 / 15);
+	timer.setInterval(1000 / 15);
 
 	Food *f0{ new Food{0,-50} };
 	theScene->addItem(f0);
@@ -99,7 +99,7 @@ void GameController::gameOver()
 void GameController::eatFood(QGraphicsItem*food)
 {
 	theScene->removeItem(food);
-	delete food;
+	QTimer::singleShot(0, [=] {delete food; });
 	newFood();
 }
 
