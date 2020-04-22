@@ -2,7 +2,7 @@
 #include<QString>
 #include<QVector>
 #include<QJsonValueRef>
-//±ØĞë´îÅäinformation.jsonÊ¹ÓÃ
+//å¿…é¡»æ­é…information.jsonä½¿ç”¨
 class Information
 {
 public:

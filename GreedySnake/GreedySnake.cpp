@@ -23,22 +23,22 @@ GreedySnake::GreedySnake(QWidget *parent)
 
 void GreedySnake::init()
 {
-	this->initGraph();//³õÊ¼»¯view,scene
-	game = new GameController{ theScene,this };//±ØÐëÏÈ³õÊ¼»¯scene²ÅÄÜ³õÊ¼»¯
+	this->initGraph();//åˆå§‹åŒ–view,scene
+	game = new GameController{ theScene,this };//å¿…é¡»å…ˆåˆå§‹åŒ–sceneæ‰èƒ½åˆå§‹åŒ–
 }
 
 void GreedySnake::initGraph()
 {
-	theView->setViewport(new QOpenGLWidget);//Ê¹ÓÃopenGL»æÖÆ
+	theView->setViewport(new QOpenGLWidget);//ä½¿ç”¨openGLç»˜åˆ¶
 	theScene->setBackgroundBrush(Qt::gray);
 	/*
-	//±³¾°Íø¸ñ
+	//èƒŒæ™¯ç½‘æ ¼
 	const int w{ GRIDW }, h{ GRIDH };
 	QPixmap pixmap(w, h);
 	QPainter painter{ &pixmap };
 	painter.setBrush(QBrush{ Qt::gray });
 	painter.drawRect(0, 0, w, h);
 	//theScene->setBackgroundBrush(QBrush{ pixmap });
-	theView->setBackgroundBrush(QBrush{ pixmap });//ÉèÖÃµÄÊÇviewµÄscene
+	theView->setBackgroundBrush(QBrush{ pixmap });//è®¾ç½®çš„æ˜¯viewçš„scene
 	*/
 }

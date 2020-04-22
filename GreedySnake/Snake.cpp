@@ -1,4 +1,4 @@
-﻿#include "Snake.h"
+#include "Snake.h"
 #include<iostream>
 #include<QPainter>
 #include<QPainterPath>

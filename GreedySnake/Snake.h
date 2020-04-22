@@ -29,10 +29,10 @@ private:
 	void moveRight();
 	void moveUp();
 	void moveDown();
-	void handleCollisions();//Åö×²
+	void handleCollisions();//ç¢°æ’
 
-	QVector<QPointF> tail;//Ã¿¸ö½ÚµãµÄ×óÉÏ½Çµã,scene×ø±ê
-	QPointF head;//Í·×ø±ê
+	QVector<QPointF> tail;//æ¯ä¸ªèŠ‚ç‚¹çš„å·¦ä¸Šè§’ç‚¹,sceneåæ ‡
+	QPointF head;//å¤´åæ ‡
 	GameController *theController;
 	MoveDirection dirction;
 	unsigned growing;

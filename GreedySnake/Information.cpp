@@ -4,7 +4,7 @@
 #include<QJsonDocument>
 #include<QJsonObject>
 
-//½øÈëÏÂÒ»²ãµÄÇ¶Ì×½á¹¹
+//è¿›å…¥ä¸‹ä¸€å±‚çš„åµŒå¥—ç»“æž„
 static QJsonObject tear(const QString&key, const QJsonObject&item) {
 	return item[key].toObject();
 }
@@ -22,15 +22,15 @@ QJsonValue Information::value(const QVector<QString>&info)
 {
 	//get QJsonObject from file
 	QFile file{ "information.json" };
-	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))return QJsonValue{};//ÎÄ¼þ´ò¿ªÊ§°Ü·µ»Ø
+	if (!file.open(QIODevice::ReadOnly | QIODevice::Text))return QJsonValue{};//æ–‡ä»¶æ‰“å¼€å¤±è´¥è¿”å›ž
 	QByteArray data{ file.readAll() };
 	QJsonDocument doc{ QJsonDocument::fromJson(data) };
 	QJsonObject obj{ doc.object() };
 	//read paras
 	const int objDeep{ info.size() };
-	if (objDeep == 0)return QJsonValue{};//ÊäÈë²ÎÊýÎª0·µ»Ø
+	if (objDeep == 0)return QJsonValue{};//è¾“å…¥å‚æ•°ä¸º0è¿”å›ž
 	QJsonObject temp;
-	if (objDeep > 1) {//Ç¶Ì×²ãÊý´óÓÚ1Ê±
+	if (objDeep > 1) {//åµŒå¥—å±‚æ•°å¤§äºŽ1æ—¶
 		for (int i{ 0 }; i != objDeep - 1; ++i) {
 			obj = tear(info[i], obj);
 		}
